@@ -1,0 +1,26 @@
+{
+  "name": "pickbazar-react",
+  "version": "9.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": "RedQ, Inc.",
+  "workspaces": [
+    "admin/*",
+    "shop"
+  ],
+  "scripts": {
+    "dev:shop-rest": "yarn workspace @pick-bazar/shop dev:rest",
+    "build:shop-rest": "yarn workspace @pick-bazar/shop build:rest",
+    "start:shop-rest": "yarn workspace @pick-bazar/shop start",
+    "dev:admin-rest": "yarn workspace @marvel/admin-rest dev",
+    "build:admin-rest": "yarn workspace @marvel/admin-rest build",
+    "start:admin-rest": "yarn workspace @marvel/admin-rest start",
+    "dev:shop-gql": "yarn workspace @pick-bazar/shop dev:gql",
+    "build:shop-gql": "yarn workspace @pick-bazar/shop build:gql",
+    "start:shop-gql": "yarn workspace @pick-bazar/shop start"
+  },
+  "devDependencies": {
+    "prettier": "2.4.0",
+    "rimraf": "3.0.2"
+  }
+}
