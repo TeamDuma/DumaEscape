@@ -1,7 +1,7 @@
 {
   "id": 1,
   "options": {
-    "siteTitle": "Pickbazar",
+    "siteTitle": "Duma",
     "siteSubtitle": "Your next ecommerce",
     "minimumOrderAmount": 0,
     "currencyToWalletRatio": 3,
@@ -40,7 +40,7 @@
         "city": null,
         "state": "NY",
         "country": "United States",
-        "formattedAddress": "NY State Thruway, New York, USA"
+        "formattedAddress": "NY State Thruway, New York, USD"
       }
     },
     "logo": {

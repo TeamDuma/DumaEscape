@@ -82,6 +82,7 @@ module.exports = {
           youtube: '#ff0000',
           google: '#4285f4',
           'google-hover': '#3574de',
+          orange: '#F58929',
         },
       },
       textColor: {

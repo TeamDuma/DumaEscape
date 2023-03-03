@@ -11,6 +11,7 @@ import { useMemo } from 'react';
 import GroupsDropdownMenu from './menu/groups-menu';
 import { useHeaderSearch } from '@/layouts/headers/header-search-atom';
 import LanguageSwitcher from '@/components/ui/language-switcher';
+import CartCheckBagIcon from '@/components/icons/cart-check-bag';
 
 const Search = dynamic(() => import('@/components/ui/search/search'));
 const AuthorizedMenu = dynamic(() => import('./menu/authorized-menu'), {
@@ -89,14 +90,21 @@ const Header = ({ layout }: { layout?: string }) => {
         <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse lg:flex 2xl:space-x-10">
           <StaticMenu />
           <div className="flex items-center space-x-4 rtl:space-x-reverse">
-            <a
+            {/* <a
               href={`${process.env.NEXT_PUBLIC_ADMIN_URL}/register`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-9 shrink-0 items-center justify-center rounded border border-transparent bg-accent px-3 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-none focus:ring-1 focus:ring-accent-700"
             >
               {t('text-become-seller')}
-            </a>
+            </a> */}
+            <div className="flex items-center font-bold">
+              <CartCheckBagIcon width={25} height={25} fillColor="#349F7F" />
+              <p className=" cursor-pointer text-gray-800 transition duration-200 hover:text-accent focus:text-accent">
+                Cart
+              </p>
+            </div>
+            {/* <li>{isAuthorize ? <AuthorizedMenu /> : <JoinButton />}</li> */}
             <li>{isAuthorize ? <AuthorizedMenu /> : <JoinButton />}</li>
           </div>
           {isMultilangEnable ? (

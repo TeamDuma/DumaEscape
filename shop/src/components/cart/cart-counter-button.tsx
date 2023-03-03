@@ -22,7 +22,7 @@ const CartCounterButton = () => {
       onClick={handleCartSidebar}
     >
       <span className="flex pb-0.5">
-        <CartCheckBagIcon className="shrink-0" width={14} height={16} />
+        <CartCheckBagIcon fillColor='#fff' className="shrink-0" width={14} height={16} />
         <span className="flex ltr:ml-2 rtl:mr-2">
           {formatString(totalUniqueItems, t('common:text-item'))}
         </span>

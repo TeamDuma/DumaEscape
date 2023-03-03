@@ -7,6 +7,7 @@ import type { Banner } from '@/types';
 import { useHeaderSearch } from '@/layouts/headers/header-search-atom';
 import { useIntersection } from 'react-use';
 import { useEffect, useRef } from 'react';
+import Button from '@/components/ui/button';
 
 interface BannerProps {
   banners: Banner[] | undefined;
@@ -65,7 +66,7 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
                   />
                   <div
                     className={cn(
-                      'absolute inset-0 mt-8 flex w-full flex-col items-center justify-center p-5 text-center md:px-20 lg:space-y-10',
+                      'absolute inset-0 mt-8 flex w-full flex-col items-start justify-center p-5 text-center md:px-20 lg:space-y-10',
                       {
                         'space-y-5 md:!space-y-8': layout === 'minimal',
                       }
@@ -81,11 +82,20 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
                     >
                       {banner?.title}
                     </h1>
-                    <p className="text-sm text-heading lg:text-base xl:text-lg">
+                    {/* <p className="text-sm text-heading lg:text-base xl:text-lg">
                       {banner?.description}
+                    </p> */}
+                    <p className="text-sm text-heading lg:text-base xl:text-lg text-left">
+                      We select high quality products that risk being thrown
+                      <br />
+                      away and make them available for purchase.
                     </p>
-                    <div className="w-full max-w-3xl" ref={intersectionRef}>
-                      <Search label="search" />
+                    <div
+                      className="flex w-full max-w-3xl items-start"
+                      ref={intersectionRef}
+                    >
+                      {/* <Search label="search" /> */}
+                      <Button size="big">Shop now</Button>
                     </div>
                   </div>
                 </div>
