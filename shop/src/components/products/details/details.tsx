@@ -32,6 +32,7 @@ import { useUser } from '@/framework/user';
 import { useInWishlist, useToggleWishlist } from '@/framework/wishlist';
 import { useIntersection } from 'react-use';
 import { StarIcon } from '@/components/icons/star-icon';
+import Button from '@/components/ui/button';
 
 function FavoriteButton({
   productId,
@@ -217,9 +218,9 @@ const Details: React.FC<Props> = ({
                 />
               </span>
             </div>
-         
+
             <div className="mt-2 flex items-center justify-between">
-            {unit && !hasVariations && (
+              {unit && !hasVariations && (
                 <span className="block text-sm font-normal text-body">
                   {unit}
                 </span>
@@ -248,7 +249,7 @@ const Details: React.FC<Props> = ({
 
             {hasVariations ? (
               <>
-                <div className="my-5 flex items-center md:my-10">
+                <div className="my-5 flex items-center md:my-5">
                   <VariationPrice
                     selectedVariation={selectedVariation}
                     minPrice={product.min_price}
@@ -260,7 +261,7 @@ const Details: React.FC<Props> = ({
                 </div>
               </>
             ) : (
-              <span className="my-5 flex items-center md:my-10">
+              <span className="my-5 flex items-center md:my-5">
                 <ins className="text-2xl font-semibold text-accent no-underline md:text-3xl">
                   {price}
                 </ins>
@@ -271,6 +272,15 @@ const Details: React.FC<Props> = ({
                 )}
               </span>
             )}
+
+            <div>
+              <Button
+                className="border-orange-400 text-orange-400 hover:border-orange-400 hover:bg-white hover:text-orange-400 "
+                variant="outline"
+              >
+                50% OFF ends in 5 days
+              </Button>
+            </div>
 
             <div className="mt-6 flex flex-col items-center md:mt-6 lg:flex-row">
               <div className="mb-3 w-full lg:mb-0 lg:max-w-[400px]">
@@ -307,26 +317,27 @@ const Details: React.FC<Props> = ({
               )}
             </div>
           </div>
-          {!!categories?.length && (
+          {/* {!!categories?.length && (
             <CategoryBadges
               categories={categories}
               basePath={`/${type?.slug}`}
               onClose={closeModal}
             />
-          )}
+          )} */}
 
           {shop?.name && (
-            <div className="mt-2 flex items-center">
+            <div className="mt-2 mt-6 flex items-center">
               <span className="py-1 text-sm font-semibold capitalize text-heading ltr:mr-6 rtl:ml-6">
-                {t('common:text-sellers')}
+                {/* {t('common:text-sellers')} */}
+                Enjoy before:
               </span>
-
-              <button
+              <p className="font-bold text-orange-400"> 20th, August, 2023</p>
+              {/* <button
                 onClick={() => navigate(Routes.shop(shop?.slug))}
                 className="text-sm tracking-wider text-accent underline transition hover:text-accent-hover hover:no-underline"
               >
                 {shop?.name}
-              </button>
+              </button> */}
             </div>
           )}
         </div>
@@ -338,8 +349,6 @@ const Details: React.FC<Props> = ({
       >
         <h2 className="mb-4 text-lg font-semibold tracking-tight text-heading md:mb-6">
           {t('text-details')}
-
-
         </h2>
         <p className="text-sm text-body">{description}</p>
       </Element>
