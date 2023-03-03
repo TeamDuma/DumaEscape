@@ -44,8 +44,10 @@
       {
         "id": 12,
         "type_id": 1,
+        
         "title": "Shop the best deals",
         "description": "We select high quality products that risk \nbeing thrown away and make them available for purchase.",
+
         "image": {
           "id": 907,
           "original": "https://res.cloudinary.com/dhmljeapc/image/upload/v1677805398/duma_hero_e8bj8j.png",
