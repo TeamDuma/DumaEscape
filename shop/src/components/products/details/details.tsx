@@ -210,9 +210,20 @@ const Details: React.FC<Props> = ({
                 {name}
               </h1>
 
-          
+              <span>
+                <FavoriteButton
+                  productId={id}
+                  className={classNames({ 'mr-1': isModal })}
+                />
+              </span>
             </div>
+         
             <div className="mt-2 flex items-center justify-between">
+            {unit && !hasVariations && (
+                <span className="block text-sm font-normal text-body">
+                  {unit}
+                </span>
+              )}
               {isModal && (
                 <div className="inline-flex shrink-0 items-center rounded border border-accent bg-accent px-3 py-1 text-sm text-white">
                   {ratings}
@@ -220,6 +231,20 @@ const Details: React.FC<Props> = ({
                 </div>
               )}
             </div>
+
+            {description && (
+              <div className="mt-3 text-sm leading-7 text-body md:mt-4">
+                <Truncate
+                  character={150}
+                  {...(!isModal && {
+                    onClick: () => scrollDetails(),
+                    compressText: 'common:text-see-more',
+                  })}
+                >
+                  {description}
+                </Truncate>
+              </div>
+            )}
 
             {hasVariations ? (
               <>
@@ -282,6 +307,28 @@ const Details: React.FC<Props> = ({
               )}
             </div>
           </div>
+          {!!categories?.length && (
+            <CategoryBadges
+              categories={categories}
+              basePath={`/${type?.slug}`}
+              onClose={closeModal}
+            />
+          )}
+
+          {shop?.name && (
+            <div className="mt-2 flex items-center">
+              <span className="py-1 text-sm font-semibold capitalize text-heading ltr:mr-6 rtl:ml-6">
+                {t('common:text-sellers')}
+              </span>
+
+              <button
+                onClick={() => navigate(Routes.shop(shop?.slug))}
+                className="text-sm tracking-wider text-accent underline transition hover:text-accent-hover hover:no-underline"
+              >
+                {shop?.name}
+              </button>
+            </div>
+          )}
         </div>
       </div>
 
@@ -291,11 +338,13 @@ const Details: React.FC<Props> = ({
       >
         <h2 className="mb-4 text-lg font-semibold tracking-tight text-heading md:mb-6">
           {t('text-details')}
+
+
         </h2>
         <p className="text-sm text-body">{description}</p>
       </Element>
 
-      <div className="relative h-full w-full overflow-hidden rounded">
+      {/* <div className="relative h-full w-full overflow-hidden rounded">
         <Image
           alt={t('heading')}
           src={banar}
@@ -305,7 +354,7 @@ const Details: React.FC<Props> = ({
           height={870}
           className="h-full w-full"
         />
-      </div>
+      </div> */}
     </article>
   );
 };
