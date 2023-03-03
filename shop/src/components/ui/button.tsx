@@ -23,7 +23,7 @@ const classes = {
   disabledOutline: 'border border-border-base text-muted cursor-not-allowed',
   small: 'px-3 py-0 h-9 text-sm h-10',
   medium: 'px-5 py-0 h-12',
-  big: 'px-10 py-0 h-14',
+  big: 'px-20 py-0 h-14',
 };
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(

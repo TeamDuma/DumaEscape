@@ -40,12 +40,11 @@
         "city": null,
         "state": "NY",
         "country": "United States",
-        "formattedAddress": "NY State Thruway, New York, USA"
+        "formattedAddress": "NY State Thruway, New York, USD"
       }
     },
     "logo": {
       "id": "862",
-      // "original": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/860/PickBazar.png",
       "original": "https://res.cloudinary.com/dhmljeapc/image/upload/v1677794086/dumaLogo_tnzly0.png",
       "thumbnail": "https://pickbazarlaravel.s3.ap-southeast-1.amazonaws.com/860/conversions/PickBazar-thumbnail.jpg"
     },
