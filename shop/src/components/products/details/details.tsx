@@ -326,7 +326,7 @@ const Details: React.FC<Props> = ({
           )} */}
 
           {shop?.name && (
-            <div className="mt-2 mt-6 flex items-center">
+            <div className="mt-2 flex items-center">
               <span className="py-1 text-sm font-semibold capitalize text-heading ltr:mr-6 rtl:ml-6">
                 {/* {t('common:text-sellers')} */}
                 Enjoy before:

@@ -5,7 +5,7 @@ type EnvVariables = {
   readonly NEXT_PUBLIC_REST_API_ENDPOINT: string;
   readonly NEXT_PUBLIC_GRAPHQL_API_ENDPOINT: string;
   readonly NEXT_PUBLIC_DEFAULT_LANGUAGE: string;
-  // readonly NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: string;
+  readonly NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY: string;
   // readonly NEXT_PUBLIC_RAZORPAY_PUBLISHABLE_KEY: string;
   readonly NEXT_PUBLIC_STRIPE_PAYMENT_ELEMENT_REDIRECT_URL: string;
   readonly NEXT_PUBLIC_SITE_URL: string;

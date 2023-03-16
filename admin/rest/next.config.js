@@ -13,6 +13,7 @@ const nextConfig = {
   },
   images: {
     domains: [
+      'asset.cloudinary.com',
       'via.placeholder.com',
       'res.cloudinary.com',
       's3.amazonaws.com',
